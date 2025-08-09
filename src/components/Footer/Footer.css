@@ -1,0 +1,8 @@
+.footer {
+    font-family: 'Gluten', cursive;
+    color: rgb(255, 187, 0);
+    background-color: hsl(from #000 h s l / 0.8);
+    place-content: center;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}

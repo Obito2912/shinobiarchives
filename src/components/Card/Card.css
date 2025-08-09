@@ -1,0 +1,26 @@
+:root {
+    --surface-1: hsl(256, 43%, 7%);
+    --border-1: hsl(259, 13%, 28%);
+    --border-2: hsl(252, 9%, 22%);
+}
+
+.card {
+    border-radius: 1rem;
+    position: relative;
+    background: hsl(from var(--surface-1) h s l / 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(var(--border-1), var(--border-2)) border-box;
+    /* border: 1px solid transparent; */
+    mask:
+        linear-gradient(black) border-box,
+        linear-gradient(black) padding-box;
+    mask-composite: subtract;
+}
