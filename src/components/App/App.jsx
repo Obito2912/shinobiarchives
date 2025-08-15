@@ -18,7 +18,7 @@ import ProtectedRoute from "../ProtectedRoute";
 import { signIn, signUp, checkToken } from "../../utils/auth";
 import Profile from "../Profile/Profile";
 import {
-  // getCharacters,
+  getCharacters,
   getAkatsuki,
   getClans,
   getKara,
@@ -42,7 +42,7 @@ function App() {
   const [villages, setVillages] = useState([]);
 
   // State for stats
-  // const [numOfCharacters, setNumOfCharacters] = useState(0);
+  const [numOfCharacters, setNumOfCharacters] = useState(0);
   const [numOfAkatsuki, setNumOfAkatsuki] = useState(0);
   const [numOfClans, setNumOfClans] = useState(0);
   const [numOfKara, setNumOfKara] = useState(0);
@@ -115,10 +115,10 @@ function App() {
   };
 
   useEffect(() => {
-    // getCharacters().then((data) => {
-    //   setCharacters(data.characters);
-    //   setNumOfCharacters(data.total);
-    // });
+    getCharacters().then((data) => {
+      // setCharacters(data.characters);
+      setNumOfCharacters(data.total);
+    });
 
     getAkatsuki().then((data) => {
       setAkatsuki(data.akatsuki);
@@ -187,7 +187,7 @@ function App() {
             path="/"
             element={
               <Main
-                // numOfCharacters={numOfCharacters}
+                numOfCharacters={numOfCharacters}
                 numOfAkatsuki={numOfAkatsuki}
                 numOfClans={numOfClans}
                 numOfKara={numOfKara}
