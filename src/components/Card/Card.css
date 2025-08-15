@@ -5,22 +5,31 @@
 }
 
 .card {
+    border: 1px solid var(--border-1);
     border-radius: 1rem;
-    position: relative;
-    background: hsl(from var(--surface-1) h s l / 0.2);
-    backdrop-filter: blur(10px);
+    outline: none;
 }
 
-.card::before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    inset: 0;
-    border-radius: inherit;
-    background: linear-gradient(var(--border-1), var(--border-2)) border-box;
-    /* border: 1px solid transparent; */
-    mask:
-        linear-gradient(black) border-box,
-        linear-gradient(black) padding-box;
-    mask-composite: subtract;
+.card:hover {
+    border: 1px solid silver;
 }
+
+/* :root {
+  --card-shadow-rest:
+    2px 3px 6px rgba(0, 0, 0, 0.18),
+    6px 10px 20px rgba(0, 0, 0, 0.22);
+  --card-shadow-hover:
+    3px 5px 10px rgba(0, 0, 0, 0.2),
+    10px 16px 32px rgba(0, 0, 0, 0.28);
+}
+
+.card {
+  box-shadow: var(--card-shadow-rest);
+  transition: box-shadow 160ms ease, transform 160ms ease;
+  border-radius: 12px;
+}
+
+.card:hover {
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-1px); 
+} */

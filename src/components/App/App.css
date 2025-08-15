@@ -1,13 +1,13 @@
 .page {
-    background-color: beige;
+    background: linear-gradient(to bottom, #292929 0%, #000 80%);
+    color: #fff;
 }
 
 .page__content {
     display: grid;
-    grid-template-rows: minmax(72px, 80px) auto minmax(60px, 70px);
+    grid-template-rows: minmax(72px, 80px) auto 250px;
     max-width: 1360px;
     margin: 0 auto;
     min-height: 100vh;
-    font-family: "Roboto", sans-serif;
-    gap: 20px;
+    font-family: "Exo 2", sans-serif;
 }

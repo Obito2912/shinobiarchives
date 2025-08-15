@@ -1,25 +1,31 @@
 .characters {
-    background-image: url(../../images/landscape.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 10px;
-    padding: 10px;
     gap: 15px;
+    margin: 30px 0 50px;
 }
 
 .characters__title {
-    margin: 0 auto 15px;
-    text-align: center;
-    width: 80%;
-    border-radius: 10px;
-    background-color: hsl(from #000 h s l / 0.8);
-    box-shadow: inset 0 0 10px #008000;
     color: #fff;
-    padding: 10px;
+    text-align: center;
+    margin: 0;
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px #ffbb00;
+    position: relative;
+}
+
+.characters__title::after {
+    position: absolute;
+    content: '';
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 50%;
+    height: 1px;
+    background-color: #ffbb00;
+    pointer-events: none;
 }
 
 .character__list {
@@ -29,18 +35,104 @@
     gap: 15px;
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .character__item {
+    position: relative;
+    width: 430px;
+    height: 320px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.character__item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+    z-index: 0;
+}
+
+.character__content {
+    position: relative;
+    z-index: 1;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .6);
     padding: 15px;
+    overflow: hidden;
 }
 
 .character__title {
+    z-index: 10;
     margin: 0;
-    color: #FFD500;
+    color: #ffbb00;
+    text-shadow: 0 0 5px #ffbb00;
 }
 
 .character__image {
     width: 150px;
     height: auto;
+}
+
+.character__subtitle {
+    color: #ffbb00;
+    font-weight: lighter;
+    margin: 15px 0 0;
+}
+
+.character__info {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0;
+    font-weight: 300;
+}
+
+.character__key {
+    color: #ffbb00;
+    margin: 0;
+    font-weight: 500;
+}
+
+.character__value {
+    font-weight: 300;
+    color: #fff;
+}
+
+.pagination {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pagination__btn {
+    border-radius: 10px;
+    border: none;
+    padding: .3em 1.3em;
+    cursor: pointer;
+}
+
+.pagination__btn:hover {
+    background-color: #ffbb00;
+}
+
+.pagination__btn:disabled:hover {
+    background-color: rgba(239, 239, 239, 0.3);
+    cursor: default;
+}
+
+.pagination__page,
+.pagination__total {
+    color: #ffbb00;
 }

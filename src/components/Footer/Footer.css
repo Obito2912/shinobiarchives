@@ -1,8 +1,53 @@
 .footer {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(200px, 40%) 1fr;
     font-family: 'Gluten', cursive;
-    color: rgb(255, 187, 0);
-    background-color: hsl(from #000 h s l / 0.8);
+    background-image: linear-gradient(to left, #000 0%, rgb(34, 161, 203) 40%);
     place-content: center;
-    margin-bottom: 5px;
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.footer__message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 2rem;
+    width: 370px;
+    margin: 0;
+    color: #000;
+}
+
+.footer__media {
+    background-image: linear-gradient(to right, #000 0%, transparent 30%, rgb(34, 161, 203) 95%), url("src/images/itachi-1.webp");
+    background-size: cover;
+    background-position: top left;
+    border-top-left-radius: 10px;
+}
+
+.footer__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+}
+
+.footer__item {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+
+.footer__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #ffbb00;
+    width: 25%;
 }

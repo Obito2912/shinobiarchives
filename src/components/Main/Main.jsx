@@ -26,17 +26,14 @@ function Main({
 
   return (
     <main className="main">
-      <div className="main__hero">
-        <button className="main__button main__button--signup">Sign Up</button>
-        <button className="main__button main__button--signin">Sign In</button>
-      </div>
+      <div className="main__hero"></div>
       <h1 className="main__title">Step Into the World of Naruto</h1>
       <section className="naruto">
         <h2 className="naruto__title">Introduction</h2>
         <div className="naruto__content">
-          <picture>
-            <source srcSet="src/images/naruto.jpg" media="(min-width: 800px)" />
-            <source srcSet="src/images/naruto.jpg" media="(min-width: 400px)" />
+          <picture className="naruto__img-container">
+            <source srcSet="src/images/naruto.jpg" media="(800px < width)" />
+            <source srcSet="src/images/naruto.jpg" media="(400px < width)" />
             <img
               className="naruto__image"
               src="src/images/naruto.jpg"
@@ -75,7 +72,8 @@ function Main({
         <ul className="stats__list">
           {statsInfo.map((stat) => (
             <li className="stats__item" key={stat.name}>
-              <strong>{stat.name}</strong> = {stat.stat}
+              <span className="stats__name">{stat.name}</span>{" "}
+              <span className="stats__number">{stat.stat}</span>
             </li>
           ))}
         </ul>

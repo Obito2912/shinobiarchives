@@ -8,8 +8,9 @@
         'naruto-intro history'
         'naruto-intro curiosities';
     gap: 15px;
-    box-shadow: 0 0 10px #000;
-    padding: 15px;
+    padding: 15px 15px 30px;
+    color: #cecece;
+
 }
 
 .main__hero {
@@ -19,54 +20,40 @@
     height: 300px;
     position: relative;
     grid-area: hero;
-}
-
-.main__button {
-    font-weight: 500;
-    padding: .7em 1.3em;
-    cursor: pointer;
-    border: none;
-    border-radius: 1rem;
-    position: absolute;
-    background-color: #00000090;
-    color: rgb(255, 187, 0);
-}
-
-.main__button:hover {
-    background-color: rgb(255, 187, 0);
-    color: #000;
-}
-
-.main__button--signin {
-    bottom: 70px;
-    left: 20px;
-}
-
-.main__button--signup {
-    bottom: 20px;
-    left: 20px;
+    border-radius: 10px;
 }
 
 .main__title {
     grid-area: title;
     margin: 10px 0;
     line-height: 0.9;
-    /* text-transform: uppercase; */
-    background: radial-gradient(circle at center center,
-            #008000,
-            #000) no-repeat;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 5px #fff;
+    color: #fff;
+    text-shadow: 0 0 10px #ffbb00;
+    position: relative;
+    font-weight: 500;
+}
+
+.main__title::after {
+    position: absolute;
+    content: '';
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 50%;
+    height: 1px;
+    background-color: #ffbb00;
+    pointer-events: none;
 }
 
 .naruto,
 .history,
 .curiosities,
 .stats {
-    border: 1px solid green;
+    border: 1px solid #22a1cb;
     border-radius: 10px;
     padding: 15px;
+    font-size: 1.2rem;
+    font-weight: 300;
 }
 
 .naruto__title,
@@ -74,14 +61,20 @@
 .curiosities__title,
 .stats__title {
     margin: 0 0 10px;
+    color: #ffbb00;
 }
 
 .naruto {
-    max-width: 400px;
+    /* max-width: 400px; */
     grid-area: naruto-intro;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.naruto__intro {
+    margin: 0;
+    text-align: center;
 }
 
 .naruto__title,
@@ -90,10 +83,15 @@
     text-align: center;
 }
 
+.naruto__title,
+.history__title,
+.stats__title {
+    font-size: 1.5rem;
+}
+
 .naruto__content {
     flex: 1;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     align-items: center;
     height: 80%;
@@ -102,22 +100,26 @@
 .naruto__content::before {
     content: '';
     width: 100%;
-    height: 2px;
-    background-color: rgb(255, 187, 0);
-    grid-column: 1 / 3;
+    height: 1px;
+    background-color: #22a1cb;
 }
 
 .naruto__content::after {
     content: '';
     width: 100%;
-    height: 2px;
-    background-color: rgb(255, 187, 0);
-    grid-column: 1 / 3;
+    height: 1px;
+    background-color: #22a1cb;
+}
+
+.naruto__img-container {
+    display: flex;
+    justify-content: center;
 }
 
 .naruto__image {
-    border-radius: 3px;
+    border-radius: 10px;
     width: 100%;
+    max-width: 200px;
     height: auto;
     background-color: transparent;
 }
@@ -158,5 +160,24 @@
 
 .stats__item {
     padding: 10px;
-    border: 1px solid #000;
+    border: 1px solid #22a1cb;
+    border-radius: 10px;
+    display: grid;
+    justify-content: center;
+}
+
+.stats__name,
+.stats__number {
+    text-align: center;
+}
+
+.stats__name {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.stats__number {
+    font-size: 2rem;
+    font-weight: 100;
+    color: #ffbb00;
 }

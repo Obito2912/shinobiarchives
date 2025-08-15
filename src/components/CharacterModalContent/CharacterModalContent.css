@@ -1,0 +1,26 @@
+.char-modal {
+    border: none;
+}
+
+.char-modal__img {
+    width: 350px;
+    height: 270px;
+    border-radius: 10px;
+    display: block;
+    margin-inline: auto;
+}
+
+.char-modal__title {
+    margin: 10px 0;
+    color: #ddd;
+}
+
+.char-modal__key {
+    color: #fc973a;
+    margin: 0;
+}
+
+.char-modal__value {
+    color: #ddd;
+    font-weight: 200;
+}

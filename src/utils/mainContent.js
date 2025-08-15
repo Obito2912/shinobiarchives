@@ -65,7 +65,7 @@ const statsArr = (
 ) => {
   return [
     {
-      name: "Number of Akatsuki",
+      name: "Number of Akatsuki Members",
       stat: numOfAkatsuki,
     },
     {
@@ -77,11 +77,11 @@ const statsArr = (
       stat: numOfClans,
     },
     {
-      name: "Number of Kara",
+      name: "Number of Kara Members",
       stat: numOfKara,
     },
     {
-      name: "Number of Kekkei Genkai",
+      name: "Number of Kekkei Genkais",
       stat: numOfKekkeiGenkai,
     },
     {

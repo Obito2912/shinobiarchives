@@ -1,0 +1,22 @@
+.modal__form.register__form input[type=email],
+.modal__form.register__form input[type=password],
+.modal__form.register__form input[type=text],
+.modal__form.register__form input[type=url] {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    border-bottom: 1px solid #fff;
+    background-color: #ddd;
+}
+
+.modal__form.register__form input[type=email],
+.modal__form.register__form input[type=password],
+.modal__form.register__form input[type=text] {
+    margin: 8px 0 24px;
+}
+
+.modal__form.register__form input[type=url] {
+    margin-top: 8px;
+}
