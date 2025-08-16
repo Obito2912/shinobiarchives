@@ -5,7 +5,7 @@ import { Link, NavLink } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 
 // IMAGES
-import pakkun from "../../images/pakkun-img.png";
+import pakkun from "../../images/cropped-pakkun.webp";
 
 // UTILS
 import navLinks from "../../utils/navLinks";

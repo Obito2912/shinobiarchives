@@ -1,4 +1,8 @@
 import "./Footer.css";
+import facebookIcon from "../../images/facebook-icon.svg";
+import instagramIcon from "../../images/instagram-icon.svg";
+import xIcon from "../../images/x-twitter-icon.svg";
+import tiktokIcon from "../../images/tiktok-icon.svg";
 
 function Footer() {
   return (
@@ -13,7 +17,7 @@ function Footer() {
             <a className="footer__link" href="https://www.facebook.com/">
               <img
                 className="footer__icon"
-                src="src/images/facebook-icon.svg"
+                src={facebookIcon}
                 alt="Facebook Image"
               />
               <span className="footer__label">Facebook</span>
@@ -23,7 +27,7 @@ function Footer() {
             <a className="footer__link" href="https://www.instagram.com/">
               <img
                 className="footer__icon"
-                src="src/images/instagram-icon.svg"
+                src={instagramIcon}
                 alt="Instagram Image"
               />
               <span className="footer__label">Instagram</span>
@@ -31,11 +35,7 @@ function Footer() {
           </li>
           <li className="footer__item">
             <a className="footer__link" href="https://x.com/">
-              <img
-                className="footer__icon"
-                src="src/images/x-twitter-icon.svg"
-                alt="X/Twitter Image"
-              />
+              <img className="footer__icon" src={xIcon} alt="X/Twitter Image" />
               <span className="footer__label">X / Twitter</span>
             </a>
           </li>
@@ -43,7 +43,7 @@ function Footer() {
             <a className="footer__link" href="https://www.tiktok.com/">
               <img
                 className="footer__icon"
-                src="src/images/tiktok-icon.svg"
+                src={tiktokIcon}
                 alt="TickTok Image"
               />
               <span className="footer__label">TikTok</span>
