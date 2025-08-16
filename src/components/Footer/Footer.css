@@ -22,7 +22,7 @@
 }
 
 .footer__media {
-    background-image: linear-gradient(to right, #000 0%, transparent 30%, rgb(34, 161, 203) 95%), url("src/images/itachi-1.webp");
+    background-image: linear-gradient(to right, #000 0%, transparent 30%, rgb(34, 161, 203) 95%), url("../../images/itachi-1.webp");
     background-size: cover;
     background-position: top left;
     border-top-left-radius: 10px;
