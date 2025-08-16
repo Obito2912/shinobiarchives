@@ -95,7 +95,7 @@ function Characters() {
           {!loading && !err && items.length > 0 && (
             <>
               <ul className="character__list">
-                {console.log(items)}
+                {/* {console.log(items)} */}
                 {items.map((character) => (
                   <Card
                     className="character__item"
