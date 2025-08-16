@@ -23,14 +23,19 @@
     right: 28px;
     cursor: pointer;
     border: none;
-    background-color: #22a1cb92;
+    background-color: transparent;
     border-radius: 4px;
-    padding: 5px;
+    padding: 0;
     display: flex;
 }
 
 .modal__close:hover {
-    background-color: #ffbb00;
+    background-color: #dddddd52;
+}
+
+.modal__close-btn {
+    width: 30px;
+    height: auto;
 }
 
 .modal__content {
