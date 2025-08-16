@@ -189,38 +189,11 @@ function Characters() {
                   >
                     <div className="character__content">
                       <h2 className="character__title">{character.name}</h2>
-
-                      {character.jutsu && (
-                        <div>
-                          <h3 className="character__subtitle">Jutsus</h3>
-                          <p className="character__info">
-                            {character.jutsu.join(", ")}
-                          </p>
-                        </div>
-                      )}
-
-                      {character.natureType && (
-                        <div>
-                          <h3 className="character__subtitle">Nature Type</h3>
-                          <p className="character__info">
-                            {character.natureType.join(", ")}
-                          </p>
-                        </div>
-                      )}
-
-                      {character.family && (
-                        <div>
-                          <h3 className="character__subtitle">Family</h3>
-                          <div className="character__info">
-                            {Object.entries(character.family).map(([k, v]) => (
-                              <p className="character__key" key={k}>
-                                {`${k}: `}
-                                <span className="character__value">{v}</span>
-                              </p>
-                            ))}
-                          </div>
-                        </div>
-                      )}
+                      <div className="character__subtitles">
+                        {character.debut && (
+                          <span>{Object.entries(character.debut)}</span>
+                        )}
+                      </div>
                     </div>
                   </Card>
                 ))}
