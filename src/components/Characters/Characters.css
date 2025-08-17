@@ -138,8 +138,6 @@
 }
 
 @media screen and (width < 1300px) {
-
-
     .character__list {
         width: 90%;
     }

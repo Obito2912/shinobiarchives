@@ -24,3 +24,9 @@
     color: #ddd;
     align-self: center;
 }
+
+@media screen and (width < 600px) {
+    .modal__form.login__form input[type=email] {
+        margin: 8px 0 15px;
+    }
+}

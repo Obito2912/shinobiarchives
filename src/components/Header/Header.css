@@ -109,10 +109,10 @@
 @media screen and (width < 500px) {
 
     .header {
-        padding: 0;
-        width: 90%;
-        min-width: 300px;
+        padding: 10px 0 0;
         margin-inline: auto;
+        flex-direction: column;
+        gap: 0;
     }
 
     .header__right {
@@ -120,7 +120,4 @@
         gap: 8px;
     }
 
-    .header__auth {
-        flex-direction: column;
-    }
 }

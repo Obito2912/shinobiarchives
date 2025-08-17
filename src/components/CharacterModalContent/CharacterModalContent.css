@@ -25,3 +25,10 @@
     color: #ddd;
     font-weight: 200;
 }
+
+@media screen and (width < 600px) {
+    .char-modal__img {
+        width: 260px;
+        height: auto;
+    }
+}

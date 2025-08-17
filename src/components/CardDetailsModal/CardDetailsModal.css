@@ -93,3 +93,33 @@
 body:has(.dialog[open]) {
     overflow: hidden;
 }
+
+@media screen and (width < 600px) {
+
+    .dialog__content {
+        width: 400px;
+    }
+
+    .dialog__dynamic-content {
+        padding: 15px;
+    }
+
+    .dialog__title {
+        font-size: 1.5rem;
+        padding: 8px;
+    }
+}
+
+@media screen and (width < 450px) {
+    .dialog__content {
+        width: 280px;
+    }
+
+    .dialog__dynamic-content {
+        padding: 5px;
+    }
+
+    .dialog__title {
+        font-size: 1.2rem;
+    }
+}

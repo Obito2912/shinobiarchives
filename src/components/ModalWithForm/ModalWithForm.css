@@ -121,3 +121,20 @@
     gap: 12px;
     margin-top: 32px;
 }
+
+@media screen and (width < 600px) {
+    .modal__content {
+        width: 90%;
+        padding: 15px;
+        margin-bottom: 0;
+    }
+
+    .modal__close {
+        top: 10px;
+        right: 10px;
+    }
+
+    .modal__button-container {
+        margin-top: 15px;
+    }
+}
