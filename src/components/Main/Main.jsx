@@ -1,5 +1,7 @@
 import "./Main.css";
 import content from "../../utils/mainContent";
+import narutoPicture from "../../images/naruto.webp";
+import narutoMedium from "../../images/naruto-medium.webp";
 
 const { narutoIntro, history, curiosities, statsArr } = content;
 
@@ -32,11 +34,14 @@ function Main({
         <h2 className="naruto__title">Introduction</h2>
         <div className="naruto__content">
           <picture className="naruto__img-container">
-            <source srcSet="src/images/naruto.jpg" media="(800px < width)" />
-            <source srcSet="src/images/naruto.jpg" media="(400px < width)" />
+            <source
+              type="image/webp"
+              srcSet={narutoMedium}
+              media="(max-width: 1115px)"
+            />
             <img
               className="naruto__image"
-              src="src/images/naruto.jpg"
+              src={narutoPicture}
               alt="Naruto image"
               width={70}
               height={100}

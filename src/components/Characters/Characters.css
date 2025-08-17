@@ -1,4 +1,4 @@
-.characters {
+.characters__content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,18 +29,22 @@
 }
 
 .character__list {
-    width: 100%;
     display: grid;
-    grid: auto / repeat(3, 1fr);
+    justify-content: center;
+    grid: auto / repeat(auto-fit, minmax(300px, 400px));
     gap: 15px;
+    width: 100%;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
+/* CARD BEHIND HOLDING BACKGROUND IMAGE */
 .character__item {
     position: relative;
-    width: 430px;
+    width: 100%;
+    max-width: 400px;
+    min-width: 300px;
     height: 320px;
     overflow: hidden;
     display: flex;
@@ -60,6 +64,12 @@
     z-index: 0;
 }
 
+.character__item:hover::before,
+.character__item:focus::before {
+    filter: blur(0);
+}
+
+/* HAS ALL INFO INSIDE */
 .character__content {
     position: relative;
     z-index: 1;
@@ -69,44 +79,34 @@
     background-color: rgba(0, 0, 0, .6);
     padding: 15px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .character__title {
+    text-align: center;
     z-index: 10;
     margin: 0;
     color: #ffbb00;
     text-shadow: 0 0 5px #ffbb00;
 }
 
-.character__image {
-    width: 150px;
-    height: auto;
+.character__subtitles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 110px));
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .character__subtitle {
-    color: #ffbb00;
-    font-weight: lighter;
-    margin: 15px 0 0;
-}
-
-.character__info {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    margin: 0;
-    font-weight: 300;
-}
-
-.character__key {
-    color: #ffbb00;
-    margin: 0;
     font-weight: 500;
-}
-
-.character__value {
-    font-weight: 300;
-    color: #fff;
+    border: 1px solid #22a1cb;
+    border-radius: 10px;
+    text-align: center;
+    place-content: center;
 }
 
 .pagination {
@@ -135,4 +135,34 @@
 .pagination__page,
 .pagination__total {
     color: #ffbb00;
+}
+
+@media screen and (width < 1300px) {
+
+
+    .character__list {
+        width: 90%;
+    }
+}
+
+@media screen and (width < 1020px) {
+    .characters__content {
+        gap: 25px;
+    }
+
+    .pagination {
+        flex-direction: column;
+    }
+}
+
+@media screen and (width < 800px) {
+    .characters__title {
+        min-width: 300px;
+        max-width: 400px;
+        margin-inline: auto;
+    }
+
+    .characters__title::after {
+        width: 90%;
+    }
 }

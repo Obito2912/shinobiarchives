@@ -1,35 +1,10 @@
-:root {
-    --surface-1: hsl(256, 43%, 7%);
-    --border-1: hsl(259, 13%, 28%);
-    --border-2: hsl(252, 9%, 22%);
-}
-
 .card {
-    border: 1px solid var(--border-1);
-    border-radius: 1rem;
-    outline: none;
+  border: 1px solid #292929;
+  border-radius: 1rem;
+  outline: none;
 }
 
-.card:hover {
-    border: 1px solid silver;
+.card:hover,
+.card:focus {
+  border: 1px solid silver;
 }
-
-/* :root {
-  --card-shadow-rest:
-    2px 3px 6px rgba(0, 0, 0, 0.18),
-    6px 10px 20px rgba(0, 0, 0, 0.22);
-  --card-shadow-hover:
-    3px 5px 10px rgba(0, 0, 0, 0.2),
-    10px 16px 32px rgba(0, 0, 0, 0.28);
-}
-
-.card {
-  box-shadow: var(--card-shadow-rest);
-  transition: box-shadow 160ms ease, transform 160ms ease;
-  border-radius: 12px;
-}
-
-.card:hover {
-  box-shadow: var(--card-shadow-hover);
-  transform: translateY(-1px); 
-} */

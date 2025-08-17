@@ -1,88 +1,3 @@
-// import { useState } from "react";
-
-// import Card from "../Card/Card";
-// import CardDetailsModal from "../CardDetailsModal/CardDetailsModal";
-// import CharacterModalContent from "../CharacterModalContent/CharacterModalContent";
-
-// import "./Characters.css";
-
-// function Characters({ characters }) {
-//   const [selectedCard, setSelectedCard] = useState(null);
-//   console.log(characters);
-//   const getCardStyle = (character) => {
-//     const imgSrc = character?.images?.[0] || character?.images?.[1];
-
-//     return imgSrc
-//       ? {
-//           backgroundImage: `url(${imgSrc})`,
-//           backgroundSize: "cover",
-//           backgroundPosition: "center",
-//           backgroundRepeat: "no-repeat",
-//         }
-//       : {};
-//   };
-
-//   const displayCharacters = () => {
-//     return characters.map((character) => (
-//       <Card
-//         className="character__item"
-//         key={character.id}
-//         style={getCardStyle(character)}
-//         onClick={() => setSelectedCard(character)}
-//       >
-//         <div className="character__content">
-//           <h2 className="character__title">{character.name}</h2>
-//           {character.jutsu && (
-//             <div>
-//               <h3 className="character__subtitle">Jutsus</h3>
-//               <p className="character__info">{character.jutsu.join(", ")}</p>
-//             </div>
-//           )}
-//           {character.natureType && (
-//             <div>
-//               <h3 className="character__subtitle">Nature Type</h3>
-//               <p className="character__info">
-//                 {character.natureType.join(", ")}
-//               </p>
-//             </div>
-//           )}
-//           {character.family && (
-//             <div>
-//               <h3 className="character__subtitle">Family</h3>
-//               <div className="character__info">
-//                 {Object.entries(character.family).map(([k, v]) => (
-//                   <p className="character__key" key={v}>
-//                     {`${k}: `}
-//                     <span className="character__value">{v}</span>
-//                   </p>
-//                 ))}
-//               </div>
-//             </div>
-//           )}
-//         </div>
-//       </Card>
-//     ));
-//   };
-
-//   return (
-//     <>
-//       <div>
-//         <h1 className="characters__title">Characters</h1>
-//         <div className="characters">
-//           <ul className="character__list">{displayCharacters()}</ul>
-//         </div>
-//       </div>
-//       <CardDetailsModal
-//         isOpen={!!selectedCard}
-//         onClose={() => setSelectedCard(null)}
-//         title={selectedCard?.name}
-//       >
-//         {selectedCard && <CharacterModalContent card={selectedCard} />}
-//       </CardDetailsModal>
-//     </>
-//   );
-// }
-
 // export default Characters;
 // src/components/Characters/Characters.jsx
 import { useEffect, useState } from "react";
@@ -147,10 +62,10 @@ function Characters() {
 
   return (
     <>
-      <div>
+      <div className="characters">
         <h1 className="characters__title">Characters</h1>
 
-        <div className="characters">
+        <div className="characters__content">
           {/* Preloader until data has been received */}
           {loading && (
             <div aria-live="polite">
@@ -180,47 +95,36 @@ function Characters() {
           {!loading && !err && items.length > 0 && (
             <>
               <ul className="character__list">
+                {/* {console.log(items)} */}
                 {items.map((character) => (
                   <Card
                     className="character__item"
                     key={character.id}
                     style={getCardStyle(character)}
                     onClick={() => setSelectedCard(character)}
+                    aria-label={`Open details for ${character.name}`}
+                    aria-haspopups="dialog"
                   >
                     <div className="character__content">
                       <h2 className="character__title">{character.name}</h2>
-
-                      {character.jutsu && (
-                        <div>
-                          <h3 className="character__subtitle">Jutsus</h3>
-                          <p className="character__info">
-                            {character.jutsu.join(", ")}
-                          </p>
-                        </div>
-                      )}
-
-                      {character.natureType && (
-                        <div>
-                          <h3 className="character__subtitle">Nature Type</h3>
-                          <p className="character__info">
-                            {character.natureType.join(", ")}
-                          </p>
-                        </div>
-                      )}
-
-                      {character.family && (
-                        <div>
-                          <h3 className="character__subtitle">Family</h3>
-                          <div className="character__info">
-                            {Object.entries(character.family).map(([k, v]) => (
-                              <p className="character__key" key={k}>
-                                {`${k}: `}
-                                <span className="character__value">{v}</span>
-                              </p>
-                            ))}
-                          </div>
-                        </div>
-                      )}
+                      <div className="character__subtitles">
+                        {Object.entries(character)
+                          .filter(
+                            ([key]) =>
+                              key !== "id" &&
+                              key !== "images" &&
+                              key !== "name" &&
+                              key !== "voiceActors"
+                          )
+                          .map(
+                            ([key]) =>
+                              key && (
+                                <span className="character__subtitle" key={key}>
+                                  {key}
+                                </span>
+                              )
+                          )}
+                      </div>
                     </div>
                   </Card>
                 ))}

@@ -25,7 +25,7 @@ function ModalWithForm({
       <div className="modal__content" onClick={(e) => e.stopPropagation()}>
         <h2 className="modal__title">{title}</h2>
         <button onClick={onClose} type="button" className="modal__close">
-          <img src={button} alt="Close button" />
+          <img className="modal__close-btn" src={button} alt="Close button" />
         </button>
 
         <form

@@ -8,6 +8,7 @@
     border-radius: 10px;
     display: block;
     margin-inline: auto;
+    height: auto;
 }
 
 .char-modal__title {
