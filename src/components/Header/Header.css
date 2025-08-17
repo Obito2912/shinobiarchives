@@ -120,4 +120,12 @@
         gap: 8px;
     }
 
+    .dropdown {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+    }
+
 }
