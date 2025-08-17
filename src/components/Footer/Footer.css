@@ -35,7 +35,7 @@
     flex-direction: column;
     gap: 10px;
     list-style: none;
-    padding: 0 0 10px 0;
+    padding: 5px 0;
     margin: 0;
 }
 
@@ -43,6 +43,10 @@
     display: flex;
     justify-content: end;
     gap: 10px;
+}
+
+.footer__icon {
+    width: 40px;
 }
 
 .footer__link {
@@ -123,7 +127,7 @@
     .footer__list {
         display: grid;
         grid-template-columns: repeat(2, auto);
-        padding: 0;
+        padding: 0 0 10px 0;
         gap: 10px;
     }
 

@@ -5,7 +5,7 @@
 
 .page__content {
     display: grid;
-    grid-template-rows: minmax(72px, 80px) auto 250px;
+    grid-template-rows: minmax(72px, 80px) auto 200px;
     max-width: 1360px;
     margin: 0 auto;
     min-height: 100vh;
@@ -14,7 +14,7 @@
 
 @media screen and (width < 620px) {
     .page__content {
-        grid-template-rows: minmax(72px, 80px) auto 250px;
+        grid-template-rows: minmax(72px, 80px) auto 230px;
     }
 }
 
