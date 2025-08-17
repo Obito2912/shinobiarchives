@@ -62,10 +62,10 @@ function Characters() {
 
   return (
     <>
-      <div>
+      <div className="characters">
         <h1 className="characters__title">Characters</h1>
 
-        <div className="characters">
+        <div className="characters__content">
           {/* Preloader until data has been received */}
           {loading && (
             <div aria-live="polite">
@@ -102,6 +102,8 @@ function Characters() {
                     key={character.id}
                     style={getCardStyle(character)}
                     onClick={() => setSelectedCard(character)}
+                    aria-label={`Open details for ${character.name}`}
+                    aria-haspopups="dialog"
                   >
                     <div className="character__content">
                       <h2 className="character__title">{character.name}</h2>
@@ -117,17 +119,9 @@ function Characters() {
                           .map(
                             ([key]) =>
                               key && (
-                                <div
-                                  key={key}
-                                  className="character__subtitle-container"
-                                >
-                                  <span
-                                    className="character__subtitle"
-                                    key={key}
-                                  >
-                                    {key}
-                                  </span>
-                                </div>
+                                <span className="character__subtitle" key={key}>
+                                  {key}
+                                </span>
                               )
                           )}
                       </div>

@@ -181,3 +181,70 @@
     font-weight: 100;
     color: #ffbb00;
 }
+
+@media screen and (width < 1115px) {
+    .main {
+        grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+        grid-template-areas:
+            'hero hero'
+            'title title'
+            'naruto-intro naruto-intro'
+            'history curiosities';
+    }
+
+    .naruto__content {
+        grid-template-columns: 1fr 3fr;
+    }
+
+    .naruto__content::before {
+        content: none;
+    }
+
+    .naruto__content::after {
+        content: none;
+    }
+
+    .naruto__intro {
+        text-align: start;
+    }
+}
+
+@media screen and (width < 900px) {
+    .main {
+        grid-template-areas:
+            'hero hero'
+            'title title'
+            'naruto-intro naruto-intro'
+            'history history'
+            'curiosities curiosities';
+    }
+
+    .main__hero {
+        height: 200px;
+    }
+
+    .naruto__content {
+        grid-template-columns: 100%;
+    }
+
+}
+
+@media screen and (width < 650px) {
+    .main__hero {
+        height: 160px;
+    }
+}
+
+@media screen and (width < 500px) {
+    .main__hero {
+        height: 100px;
+    }
+
+    .naruto__intro {
+        text-align: center;
+    }
+
+    .stats__list {
+        grid-template-columns: 100%;
+    }
+}

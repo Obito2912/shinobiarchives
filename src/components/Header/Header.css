@@ -105,3 +105,22 @@
 .header__login-btn:hover {
     background-color: #ffbb003d;
 }
+
+@media screen and (width < 500px) {
+
+    .header {
+        padding: 0;
+        width: 90%;
+        min-width: 300px;
+        margin-inline: auto;
+    }
+
+    .header__right {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .header__auth {
+        flex-direction: column;
+    }
+}
