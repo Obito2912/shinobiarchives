@@ -161,12 +161,13 @@
         gap: 25px;
     }
 
-    .pagination {
-        flex-direction: column;
-    }
 }
 
 @media screen and (width < 800px) {
+    .characters__content {
+        margin-bottom: 20px;
+    }
+
     .characters__title {
         min-width: 300px;
         max-width: 400px;
@@ -175,5 +176,14 @@
 
     .characters__title::after {
         width: 90%;
+    }
+
+    .pagination {
+        font-size: 1rem;
+    }
+
+    .pagination__btn {
+        padding: 1em;
+        font-size: 1rem;
     }
 }

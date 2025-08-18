@@ -138,7 +138,7 @@ function Characters() {
                   onClick={() => setPage((p) => Math.max(1, p - 1))}
                   disabled={page <= 1}
                 >
-                  ← Prev
+                  Prev
                 </button>
                 <span>
                   Page <span className="pagination__page">{page}</span> of
@@ -150,7 +150,7 @@ function Characters() {
                   onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
                   disabled={page >= totalPages}
                 >
-                  Next →
+                  Next
                 </button>
               </div>
             </>
