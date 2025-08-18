@@ -143,6 +143,7 @@
 .pagination__btn:disabled:hover {
     background-color: transparent;
     cursor: default;
+    border: 1px solid var(--primary-color);
 }
 
 .pagination__page,
