@@ -1,4 +1,4 @@
-const narutoIntro = `Naruto is a 12 years old kid who lives in the hidden leaf Village.
+const narutoIntro = `Naruto is a 12 year old kid who lives in the hidden leaf Village.
             He lost his parents right after he was born so he didn't have anyone
             around to care for him in all his life. He is feeling sad but at the
             same time he tries to be positive about life. For some reason, when

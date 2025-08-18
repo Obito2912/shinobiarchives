@@ -4,9 +4,9 @@
     padding: 10px;
     border: none;
     outline: none;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid var(--white);
     border-radius: 10px;
-    background-color: #ddd;
+    background-color: var(--modal-primary-text-color);
 }
 
 .modal__form.login__form input[type=email] {
@@ -21,7 +21,7 @@
     margin: 0;
     padding: 0;
     background-color: inherit;
-    color: #ddd;
+    color: var(--modal-primary-text-color);
     align-self: center;
 }
 

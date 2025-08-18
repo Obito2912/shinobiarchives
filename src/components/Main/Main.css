@@ -9,7 +9,7 @@
         'naruto-intro curiosities';
     gap: 15px;
     padding: 15px 15px 30px;
-    color: #cecece;
+    color: var(--main-text-color);
 
 }
 
@@ -27,8 +27,8 @@
     grid-area: title;
     margin: 10px 0;
     line-height: 0.9;
-    color: #fff;
-    text-shadow: 0 0 10px #ffbb00;
+    color: var(--white);
+    text-shadow: 0 0 10px var(--primary-color);
     position: relative;
     font-weight: 500;
 }
@@ -41,7 +41,7 @@
     bottom: 0;
     width: 50%;
     height: 1px;
-    background-color: #ffbb00;
+    background-color: var(--primary-color);
     pointer-events: none;
 }
 
@@ -49,7 +49,7 @@
 .history,
 .curiosities,
 .stats {
-    border: 1px solid #22a1cb;
+    border: 1px solid var(--full-border);
     border-radius: 10px;
     padding: 15px;
     font-size: 1.2rem;
@@ -61,7 +61,7 @@
 .curiosities__title,
 .stats__title {
     margin: 0 0 10px;
-    color: #ffbb00;
+    color: var(--primary-color);
 }
 
 .naruto {
@@ -101,14 +101,14 @@
     content: '';
     width: 100%;
     height: 1px;
-    background-color: #22a1cb;
+    background-color: var(--full-border);
 }
 
 .naruto__content::after {
     content: '';
     width: 100%;
     height: 1px;
-    background-color: #22a1cb;
+    background-color: var(--full-border);
 }
 
 .naruto__img-container {
@@ -160,7 +160,7 @@
 
 .stats__item {
     padding: 10px;
-    border: 1px solid #22a1cb;
+    border: 1px solid var(--full-border);
     border-radius: 10px;
     display: grid;
     justify-content: center;
@@ -179,7 +179,7 @@
 .stats__number {
     font-size: 2rem;
     font-weight: 100;
-    color: #ffbb00;
+    color: var(--primary-color);
 }
 
 @media screen and (width < 1115px) {

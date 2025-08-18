@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
+import "./App.css";
+
 import Characters from "../Characters/Characters";
 import Clans from "../Clans/Clans";
 import Villages from "../Villages/Villages";
@@ -27,8 +29,6 @@ import {
   getTeams,
   getVillages,
 } from "../../utils/dattebayoApi";
-
-import "./App.css";
 
 function App() {
   // State for cards content

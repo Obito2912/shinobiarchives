@@ -7,8 +7,8 @@
     outline: none;
     border: none;
     border-radius: 10px;
-    border-bottom: 1px solid #fff;
-    background-color: #ddd;
+    border-bottom: 1px solid var(--white);
+    background-color: var(--modal-primary-text-color);
 }
 
 .modal__form.register__form input[type=email],

@@ -1,5 +1,31 @@
 @import url(./vendor/normalize.css);
 
+:root {
+    --black: #000;
+    --white: #fff;
+    --primary-color: #ffbb00;
+    --full-border: #22a1cb;
+    --modal-outer-background: #0000004d;
+    --modal-inner-background: #292929;
+    --modal-primary-text-color: #ddd;
+    --modal-close-hover: #dddddd52;
+    --dialog-close-hover: #0a3d7781;
+    --modal-submit-background: #0000006e;
+    --main-text-color: #cecece;
+    --disabled-button: rgba(239, 239, 239, 0.3);
+    --character-content-background: rgba(0, 0, 0, .6);
+    --header-border-btn: #444;
+    --dropdown-menu-border: #2c2c2c;
+    --dropdown-box-shadow: rgba(0, 0, 0, .35);
+    --header-btn-hover: #dddddd17;
+    --footer-gradient: rgb(34, 161, 203);
+    --dialog-highlight: #fc973a;
+    --dialog-background: hsla(0, 0%, 0%, 0.9);
+    --dialog-black-gradient: #00000076;
+    --dialog-dark-blue-gradient: #0a3d7776;
+    --preloader-border-color: #888;
+}
+
 h1,
 h2,
 h3,
