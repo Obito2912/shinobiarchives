@@ -2,7 +2,7 @@
     position: relative;
     display: grid;
     grid-template-columns: minmax(200px, 40%) 1fr;
-    font-family: 'Gluten', cursive;
+    font-family: 'Gluten', 'Trebuchet MS', 'Lucida Sans Unicode';
     background-image: linear-gradient(to left, var(--black) 0%, var(--footer-gradient) 40%, var(--footer-gradient) 80%, var(--black) 90%);
     place-content: center;
     border-top-left-radius: 10px;

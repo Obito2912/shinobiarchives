@@ -4,7 +4,7 @@
     padding: 10px;
     border: none;
     outline: none;
-    border-bottom: 1px solid var(--white);
+    border: 2px solid var(--transparent);
     border-radius: 10px;
     background-color: var(--modal-primary-text-color);
 }
@@ -17,12 +17,27 @@
     margin-top: 8px;
 }
 
+.modal__form.login__form input[type=email]:focus,
+.modal__form.login__form input[type=password]:focus,
+.secondary__option:focus {
+    outline: none;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color);
+}
+
 .secondary__option {
+    border: 1px solid var(--white);
     margin: 0;
     padding: 0;
     background-color: inherit;
     color: var(--modal-primary-text-color);
     align-self: center;
+    padding: .5em 1.5em;
+}
+
+.secondary__option:focus {
+    border: 1px solid var(--primary-color);
+    box-shadow: none;
 }
 
 @media screen and (width < 600px) {

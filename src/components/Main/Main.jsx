@@ -28,7 +28,11 @@ function Main({
 
   return (
     <main className="main">
-      <div className="main__hero"></div>
+      <div
+        className="main__hero"
+        role="img"
+        aria-label="A hero image of the hidden leaf village"
+      ></div>
       <h1 className="main__title">Step Into the World of Naruto</h1>
       <section className="naruto">
         <h2 className="naruto__title">Introduction</h2>

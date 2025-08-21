@@ -1,6 +1,28 @@
 @import url(./vendor/normalize.css);
 
+@font-face {
+    font-family: 'Exo 2';
+    src: url(./vendor/fonts/Exo2-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Gluten';
+    src: url(./vendor/fonts/Gluten-VariableFont_slnt,wght.ttf);
+}
+
+@font-face {
+    font-family: 'Comic Relief';
+    src: url(./vendor/fonts/ComicRelief-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Comic Relief';
+    src: url(./vendor/fonts/ComicRelief-Bold.ttf);
+    font-weight: bold;
+}
+
 :root {
+    --transparent: transparent;
     --black: #000;
     --white: #fff;
     --primary-color: #ffbb00;
@@ -35,7 +57,7 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: "Comic Relief", system-ui;
+    font-family: "Comic Relief", Cambria, Cochin system-ui;
 }
 
 h2 {

@@ -115,45 +115,61 @@ function App() {
   };
 
   useEffect(() => {
-    getCharacters().then((data) => {
-      // setCharacters(data.characters);
-      setNumOfCharacters(data.total);
-    });
+    getCharacters()
+      .then((data) => {
+        // setCharacters(data.characters);
+        setNumOfCharacters(data.total);
+      })
+      .catch((err) => console.error("Failed to fetch characters:", err));
 
-    getAkatsuki().then((data) => {
-      setAkatsuki(data.akatsuki);
-      setNumOfAkatsuki(data.total);
-    });
+    getAkatsuki()
+      .then((data) => {
+        setAkatsuki(data.akatsuki);
+        setNumOfAkatsuki(data.total);
+      })
+      .catch((err) => console.error("Failed to fetch akatsuki:", err));
 
-    getClans().then((data) => {
-      setClans(data.clans);
-      setNumOfClans(data.total);
-    });
+    getClans()
+      .then((data) => {
+        setClans(data.clans);
+        setNumOfClans(data.total);
+      })
+      .catch((err) => console.error("Failed to fetch clans:", err));
 
-    getKara().then((data) => {
-      setKara(data.kara);
-      setNumOfKara(data.total);
-    });
+    getKara()
+      .then((data) => {
+        setKara(data.kara);
+        setNumOfKara(data.total);
+      })
+      .catch((err) => console.error("Failed to fetch kara:", err));
 
-    getKekkeiGenkai().then((data) => {
-      setKekkeiGenkai(data["kekkei-genkai"]);
-      setNumOfKekkeiGenkai(data.total);
-    });
+    getKekkeiGenkai()
+      .then((data) => {
+        setKekkeiGenkai(data["kekkei-genkai"]);
+        setNumOfKekkeiGenkai(data.total);
+      })
+      .catch((err) => console.error("Failed to fetch kekkei-genkai:", err));
 
-    getTailedBeasts().then((data) => {
-      setTailedBeasts(data["tailed-beasts"]);
-      setNumOfTailedBeasts(data.total);
-    });
+    getTailedBeasts()
+      .then((data) => {
+        setTailedBeasts(data["tailed-beasts"]);
+        setNumOfTailedBeasts(data.total);
+      })
+      .catch((err) => console.error("Failed to fetch tailed-beasts:", err));
 
-    getTeams().then((data) => {
-      setTeams(data.teams);
-      setNumOfTeams(data.total);
-    });
+    getTeams()
+      .then((data) => {
+        setTeams(data.teams);
+        setNumOfTeams(data.total);
+      })
+      .catch((err) => console.error("Failed to fetch teams:", err));
 
-    getVillages().then((data) => {
-      setVillages(data.villages);
-      setNumOfVillages(data.total);
-    });
+    getVillages()
+      .then((data) => {
+        setVillages(data.villages);
+        setNumOfVillages(data.total);
+      })
+      .catch((err) => console.error("Failed to fetch villages:", err));
   }, []);
 
   useEffect(() => {

@@ -30,7 +30,6 @@
     color: var(--white);
     text-shadow: 0 0 10px var(--primary-color);
     position: relative;
-    font-weight: 500;
 }
 
 .main__title::after {

@@ -24,11 +24,23 @@ function LoginModal({ onClose, isOpen, handleSignUpClick, onSignIn }) {
     >
       <label htmlFor="login-email">
         Email
-        <input type="email" name="email" id="login-email" required />
+        <input
+          type="email"
+          name="email"
+          id="login-email"
+          placeholder="Enter your email"
+          required
+        />
       </label>
       <label htmlFor="login-password">
         Password
-        <input type="password" name="password" id="login-password" required />
+        <input
+          type="password"
+          name="password"
+          id="login-password"
+          placeholder="Enter your password"
+          required
+        />
       </label>
     </ModalWithForm>
   );
