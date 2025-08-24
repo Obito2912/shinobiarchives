@@ -64,7 +64,6 @@
 }
 
 .naruto {
-    /* max-width: 400px; */
     grid-area: naruto-intro;
     display: flex;
     flex-direction: column;
@@ -80,12 +79,6 @@
 .stats__title,
 .main__title {
     text-align: center;
-}
-
-.naruto__title,
-.history__title,
-.stats__title {
-    font-size: 1.5rem;
 }
 
 .naruto__content {

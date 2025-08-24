@@ -1,5 +1,11 @@
 import "./LoginModal.css";
+
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import Input from "../Input/Input";
+import {
+  email_validation,
+  password_validation,
+} from "../../utils/inputValidations";
 
 function LoginModal({ onClose, isOpen, handleSignUpClick, onSignIn }) {
   return (
@@ -22,26 +28,8 @@ function LoginModal({ onClose, isOpen, handleSignUpClick, onSignIn }) {
         </button>
       }
     >
-      <label htmlFor="login-email">
-        Email
-        <input
-          type="email"
-          name="email"
-          id="login-email"
-          placeholder="Enter your email"
-          required
-        />
-      </label>
-      <label htmlFor="login-password">
-        Password
-        <input
-          type="password"
-          name="password"
-          id="login-password"
-          placeholder="Enter your password"
-          required
-        />
-      </label>
+      <Input {...email_validation} />
+      <Input {...password_validation} />
     </ModalWithForm>
   );
 }

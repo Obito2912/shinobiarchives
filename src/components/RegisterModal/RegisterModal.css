@@ -1,27 +1,5 @@
 .modal__form.register__form input[type=email],
 .modal__form.register__form input[type=password],
-.modal__form.register__form input[type=text],
-.modal__form.register__form input[type=url] {
-    width: 100%;
-    padding: 10px;
-    outline: none;
-    border: none;
-    border-radius: 10px;
-    border: 2px solid var(--transparent);
-    background-color: var(--modal-primary-text-color);
-}
-
-.modal__form.register__form input[type=email]:focus,
-.modal__form.register__form input[type=password]:focus,
-.modal__form.register__form input[type=text]:focus,
-.modal__form.register__form input[type=url]:focus {
-    outline: none;
-    border: 2px solid var(--primary-color);
-    box-shadow: 0 0 5px var(--primary-color);
-}
-
-.modal__form.register__form input[type=email],
-.modal__form.register__form input[type=password],
 .modal__form.register__form input[type=text] {
     margin: 8px 0 24px;
 }
