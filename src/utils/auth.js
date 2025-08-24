@@ -1,9 +1,8 @@
 import { checkResponse } from "./dattebayoApi";
-
-const baseUrl = "https://dattebayo-api.onrender.com";
+import { BASE_URL } from "./config";
 
 export function checkToken(token) {
-  return fetch(`${baseUrl}/users/me`, {
+  return fetch(`${BASE_URL}/users/me`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -13,7 +12,7 @@ export function checkToken(token) {
 }
 
 export function signUp({ name, avatar, email, password }) {
-  return fetch(`${baseUrl}/signup`, {
+  return fetch(`${BASE_URL}/signup`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -23,7 +22,7 @@ export function signUp({ name, avatar, email, password }) {
 }
 
 export function signIn({ email, password }) {
-  return fetch(`${baseUrl}/signin`, {
+  return fetch(`${BASE_URL}/signin`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

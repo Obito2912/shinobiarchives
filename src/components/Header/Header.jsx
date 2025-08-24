@@ -70,7 +70,7 @@ function Header({
           {isLoggedIn ? (
             <button
               onClick={onSignOut}
-              className="header__signup-btn header__btn"
+              className="header__signout-btn header__auth_btn"
             >
               Sign Out
             </button>
@@ -78,13 +78,13 @@ function Header({
             <>
               <button
                 onClick={handleSignUpClick}
-                className="header__signup-btn header__btn"
+                className="header__signup-btn header__auth_btn"
               >
                 Sign Up
               </button>
               <button
                 onClick={handleLogInClick}
-                className="header__login-btn header__btn"
+                className="header__login-btn header__auth_btn"
               >
                 Log In
               </button>
@@ -95,7 +95,7 @@ function Header({
         <div className="header__menu" ref={menuRef}>
           <button
             type="button"
-            className="menuButton header__btn"
+            className="header__menu_btn"
             aria-expanded={open}
             aria-controls="site-menu"
             onClick={() => setOpen((v) => !v)}

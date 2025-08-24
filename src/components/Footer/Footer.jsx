@@ -14,7 +14,11 @@ function Footer() {
       <nav className="footer__links" aria-label="Footer links">
         <ul className="footer__list">
           <li className="footer__item">
-            <a className="footer__link" href="https://www.facebook.com/">
+            <a
+              className="footer__link"
+              href="https://www.facebook.com/"
+              target="_blank"
+            >
               <img
                 className="footer__icon"
                 src={facebookIcon}
@@ -24,7 +28,11 @@ function Footer() {
             </a>
           </li>
           <li className="footer__item">
-            <a className="footer__link" href="https://www.instagram.com/">
+            <a
+              className="footer__link"
+              href="https://www.instagram.com/"
+              target="_blank"
+            >
               <img
                 className="footer__icon"
                 src={instagramIcon}
@@ -34,13 +42,17 @@ function Footer() {
             </a>
           </li>
           <li className="footer__item">
-            <a className="footer__link" href="https://x.com/">
+            <a className="footer__link" href="https://x.com/" target="_blank">
               <img className="footer__icon" src={xIcon} alt="X/Twitter Image" />
               <span className="footer__label">X / Twitter</span>
             </a>
           </li>
           <li className="footer__item">
-            <a className="footer__link" href="https://www.tiktok.com/">
+            <a
+              className="footer__link"
+              href="https://www.tiktok.com/"
+              target="_blank"
+            >
               <img
                 className="footer__icon"
                 src={tiktokIcon}

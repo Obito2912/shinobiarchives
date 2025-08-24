@@ -1,4 +1,4 @@
-const baseUrl = "https://dattebayo-api.onrender.com";
+import { BASE_URL } from "./config";
 
 const checkResponse = (res, customErrorMessage) => {
   if (res.ok) {
@@ -14,35 +14,35 @@ const checkResponse = (res, customErrorMessage) => {
 };
 
 const getCharacters = (page = 1) => {
-  return fetch(`${baseUrl}/characters?page=${page}`).then(checkResponse);
+  return fetch(`${BASE_URL}/characters?page=${page}`).then(checkResponse);
 };
 
 const getAkatsuki = () => {
-  return fetch(`${baseUrl}/akatsuki`).then(checkResponse);
+  return fetch(`${BASE_URL}/akatsuki`).then(checkResponse);
 };
 
 const getClans = () => {
-  return fetch(`${baseUrl}/clans`).then(checkResponse);
+  return fetch(`${BASE_URL}/clans`).then(checkResponse);
 };
 
 const getKara = () => {
-  return fetch(`${baseUrl}/kara`).then(checkResponse);
+  return fetch(`${BASE_URL}/kara`).then(checkResponse);
 };
 
 const getKekkeiGenkai = () => {
-  return fetch(`${baseUrl}/kekkei-genkai`).then(checkResponse);
+  return fetch(`${BASE_URL}/kekkei-genkai`).then(checkResponse);
 };
 
 const getTailedBeasts = () => {
-  return fetch(`${baseUrl}/tailed-beasts`).then(checkResponse);
+  return fetch(`${BASE_URL}/tailed-beasts`).then(checkResponse);
 };
 
 const getTeams = () => {
-  return fetch(`${baseUrl}/teams`).then(checkResponse);
+  return fetch(`${BASE_URL}/teams`).then(checkResponse);
 };
 
 const getVillages = () => {
-  return fetch(`${baseUrl}/villages`).then(checkResponse);
+  return fetch(`${BASE_URL}/villages`).then(checkResponse);
 };
 
 export {
