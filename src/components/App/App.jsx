@@ -29,18 +29,18 @@ import {
   getTeams,
   getVillages,
 } from "../../utils/dattebayoApi";
-import Preloader from "../Preloader/Preloader";
+import RouteElement from "../RouteElement/RouteElement";
 
 function App() {
   // State for cards content
-  // const [characters, setCharacters] = useState([]);
+  const [characters, setCharacters] = useState(null);
   const [akatsuki, setAkatsuki] = useState(null);
-  const [clans, setClans] = useState([]);
-  const [kara, setKara] = useState([]);
-  const [kekkeiGenkai, setKekkeiGenkai] = useState([]);
-  const [tailedBeasts, setTailedBeasts] = useState([]);
-  const [teams, setTeams] = useState([]);
-  const [villages, setVillages] = useState([]);
+  const [clans, setClans] = useState(null);
+  const [kara, setKara] = useState(null);
+  const [kekkeiGenkai, setKekkeiGenkai] = useState(null);
+  const [tailedBeasts, setTailedBeasts] = useState(null);
+  const [teams, setTeams] = useState(null);
+  const [villages, setVillages] = useState(null);
 
   // State for stats
   const [numOfAkatsuki, setNumOfAkatsuki] = useState(0);
@@ -127,11 +127,14 @@ function App() {
   useEffect(() => {
     getCharacters()
       .then((data) => {
-        // setCharacters(data.characters);
+        setCharacters(data.characters);
         setNumOfCharacters(data.total);
       })
       .catch((err) => {
         console.error("Failed to fetch characters:", err);
+        setCharactersError(
+          "Could not load Characters data. Please try again later."
+        );
       });
 
     getAkatsuki()
@@ -151,52 +154,67 @@ function App() {
         setClans(data.clans);
         setNumOfClans(data.total);
       })
-      .catch((err) => console.error("Failed to fetch clans:", err));
+      .catch((err) => {
+        console.error("Failed to fetch clans:", err);
+        setClansError("Could not load Clans data. Please try again later.");
+      });
 
     getKara()
       .then((data) => {
         setKara(data.kara);
         setNumOfKara(data.total);
       })
-      .catch((err) => console.error("Failed to fetch kara:", err));
+      .catch((err) => {
+        console.error("Failed to fetch kara:", err);
+        setKaraError("Could not load Kara data. Please try again later.");
+      });
 
     getKekkeiGenkai()
       .then((data) => {
         setKekkeiGenkai(data["kekkei-genkai"]);
         setNumOfKekkeiGenkai(data.total);
       })
-      .catch((err) => console.error("Failed to fetch kekkei-genkai:", err));
+      .catch((err) => {
+        console.error("Failed to fetch kekkei-genkai:", err);
+        setKekkeiGenkaiError(
+          "Could not load Kekkei-Genkai data. Please try again later."
+        );
+      });
 
     getTailedBeasts()
       .then((data) => {
         setTailedBeasts(data["tailed-beasts"]);
         setNumOfTailedBeasts(data.total);
       })
-      .catch((err) => console.error("Failed to fetch tailed-beasts:", err));
+      .catch((err) => {
+        console.error("Failed to fetch tailed-beasts:", err);
+        setTailedBeastsError(
+          "Could not load Tailed-Beasts data. Please try again later."
+        );
+      });
 
     getTeams()
       .then((data) => {
         setTeams(data.teams);
         setNumOfTeams(data.total);
       })
-      .catch((err) => console.error("Failed to fetch teams:", err));
+      .catch((err) => {
+        console.error("Failed to fetch teams:", err);
+        setTeamsError("Could not load Teams data. Please try again later.");
+      });
 
     getVillages()
       .then((data) => {
         setVillages(data.villages);
         setNumOfVillages(data.total);
       })
-      .catch((err) => console.error("Failed to fetch villages:", err));
-  }, [
-    akatsukiError,
-    charactersError,
-    clansError,
-    karaError,
-    kekkeiGenkaiError,
-    tailedBeastsError,
-    teamsError,
-    villagesError,
-  ]);
+      .catch((err) => {
+        console.error("Failed to fetch villages:", err);
+        setVillagesError(
+          "Could not load Villages data. Please try again later."
+        );
+      });
+  }, []);
 
   useEffect(() => {
     const token = localStorage.getItem("jwt");
@@ -224,63 +242,129 @@ function App() {
           onSignOut={handleSignOut}
           isLoggedIn={isLoggedIn}
         />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Main
-                numOfCharacters={numOfCharacters}
-                numOfAkatsuki={numOfAkatsuki}
-                numOfClans={numOfClans}
-                numOfKara={numOfKara}
-                numOfKekkeiGenkai={numOfKekkeiGenkai}
-                numOfTailedBeasts={numOfTailedBeasts}
-                numOfTeams={numOfTeams}
-                numOfVillages={numOfVillages}
-              />
-            }
-          />
-          <Route
-            path="/profile"
-            element={
-              <ProtectedRoute isLoggedIn={isLoggedIn}>
-                <Profile onSignOutClick={handleSignOut} />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/akatsuki"
-            element={
-              akatsukiError ? (
-                <div className="fill-center">
-                  <p className="page__error">{akatsukiError}</p>
-                </div>
-              ) : akatsuki === null ? (
-                <div className="fill-center">
-                  <Preloader />
-                </div>
-              ) : (
-                <Akatsuki akatsuki={akatsuki} />
-              )
-            }
-          />
-          <Route
-            path="/characters"
-            element={<Characters /* characters={characters} */ />}
-          />
-          <Route path="/clans" element={<Clans clans={clans} />} />
-          <Route path="/kara" element={<Kara kara={kara} />} />
-          <Route
-            path="/kekkei-genkai"
-            element={<KekkeiGenkai kekkeiGenkai={kekkeiGenkai} />}
-          />
-          <Route
-            path="/tailed-beasts"
-            element={<TailedBeasts tailedBeasts={tailedBeasts} />}
-          />
-          <Route path="/teams" element={<Teams teams={teams} />} />
-          <Route path="/villages" element={<Villages villages={villages} />} />
-        </Routes>
+        <main className="page__main" aria-live="polite">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Main
+                  numOfCharacters={numOfCharacters}
+                  numOfAkatsuki={numOfAkatsuki}
+                  numOfClans={numOfClans}
+                  numOfKara={numOfKara}
+                  numOfKekkeiGenkai={numOfKekkeiGenkai}
+                  numOfTailedBeasts={numOfTailedBeasts}
+                  numOfTeams={numOfTeams}
+                  numOfVillages={numOfVillages}
+                />
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                <ProtectedRoute isLoggedIn={isLoggedIn}>
+                  <Profile onSignOutClick={handleSignOut} />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/akatsuki"
+              element={
+                <RouteElement
+                  error={akatsukiError}
+                  loading={akatsuki === null}
+                  label="Akatsuki"
+                >
+                  <Akatsuki akatsuki={akatsuki} />
+                </RouteElement>
+              }
+            />
+            <Route
+              path="/characters"
+              element={
+                <RouteElement
+                  error={charactersError}
+                  loading={characters === null}
+                  label="Characters"
+                >
+                  <Characters />
+                </RouteElement>
+              }
+            />
+            <Route
+              path="/clans"
+              element={
+                <RouteElement
+                  error={clansError}
+                  loading={clans === null}
+                  label="Clans"
+                >
+                  <Clans />
+                </RouteElement>
+              }
+            />
+            <Route
+              path="/kara"
+              element={
+                <RouteElement
+                  error={karaError}
+                  loading={kara === null}
+                  label="Kara"
+                >
+                  <Kara />
+                </RouteElement>
+              }
+            />
+            <Route
+              path="/kekkei-genkai"
+              element={
+                <RouteElement
+                  error={kekkeiGenkaiError}
+                  loading={kekkeiGenkai === null}
+                  label="Kekkei-Genkai"
+                >
+                  <KekkeiGenkai />
+                </RouteElement>
+              }
+            />
+            <Route
+              path="/tailed-beasts"
+              element={
+                <RouteElement
+                  error={tailedBeastsError}
+                  loading={tailedBeasts === null}
+                  label="Tailed-Beasts"
+                >
+                  <TailedBeasts />
+                </RouteElement>
+              }
+            />
+            <Route
+              path="/teams"
+              element={
+                <RouteElement
+                  error={teamsError}
+                  loading={teams === null}
+                  label="Teams"
+                >
+                  <Teams />
+                </RouteElement>
+              }
+            />
+            <Route
+              path="/villages"
+              element={
+                <RouteElement
+                  error={villagesError}
+                  loading={villages === null}
+                  label="Villages"
+                >
+                  <Villages />
+                </RouteElement>
+              }
+            />
+          </Routes>
+        </main>
         <Footer />
       </div>
       {activeModal === "sign-up" && (

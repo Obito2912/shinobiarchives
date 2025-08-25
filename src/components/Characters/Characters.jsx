@@ -66,13 +66,6 @@ function Characters() {
         <h1 className="characters__title">Characters</h1>
 
         <div className="characters__content">
-          {/* Preloader until data has been received */}
-          {loading && (
-            <div aria-live="polite">
-              <Preloader />
-            </div>
-          )}
-
           {/* Error message */}
           {err && (
             <div role="alert" style={{ color: "#ffbb00" }}>
