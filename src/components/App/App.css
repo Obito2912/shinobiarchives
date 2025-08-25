@@ -12,6 +12,26 @@
     font-family: "Exo 2", 'Arial Narrow', Arial;
 }
 
+.page__content:has(.page__error) {
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-color);
+}
+
+.fill-center {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page__error {
+    margin: 0;
+    text-align: center;
+    font-size: 1.5rem;
+    width: 1360px;
+}
+
 @media screen and (width < 620px) {
     .page__content {
         grid-template-rows: minmax(72px, 80px) auto 230px;

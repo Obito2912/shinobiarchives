@@ -4,6 +4,7 @@
     border: none;
     border-radius: 10px;
     color: var(--white);
+    padding: 10px;
 }
 
 .dialog::backdrop {
@@ -13,7 +14,7 @@
 .dialog__content {
     display: flex;
     flex-direction: column;
-    background-color: transparent;
+    background-color: var(--black);
     height: auto;
     width: 450px;
     max-height: 80vh;
@@ -21,8 +22,10 @@
     overflow-x: hidden;
     overflow-y: auto;
     scrollbar-width: none;
-    border: 1px solid var(--modal-primary-text-color);
+    /* border: 1px solid var(--modal-primary-text-color); */
     outline: none;
+    box-shadow: 0 0 5px var(--primary-color);
+    margin-top: 10px;
 }
 
 .dialog__header {
@@ -73,7 +76,7 @@
 
 .dialog__close:hover::before,
 .dialog__close:hover::after {
-    background-color: var(--dialog-close-hover);
+    background-color: var(--primary-color);
     box-shadow: 0 0 5px var(--white);
 }
 
@@ -86,7 +89,7 @@
 }
 
 .dialog__dynamic-content {
-    background-image: linear-gradient(to bottom, var(--dialog-black-gradient) 0%, var(--dialog-dark-blue-gradient) 40%, var(--dialog-black-gradient) 100%);
+    /* background-image: linear-gradient(to bottom, var(--dialog-black-gradient) 0%, var(--dialog-dark-blue-gradient) 40%, var(--dialog-black-gradient) 100%); */
     padding: 20px;
 }
 

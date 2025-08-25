@@ -14,16 +14,13 @@ function ModalWithForm({
   secondaryBtn = null,
   onSubmit = null,
 }) {
-  const methods = useForm();
+  const methods = useForm({
+    mode: "onChange", // 👈 live validity from RHF
+    criteriaMode: "all",
+  });
+
   const [success, setSuccess] = useState(false);
 
-  const onFormSubmit = methods.handleSubmit((data) => {
-    console.log(data);
-    methods.reset();
-    setSuccess(true);
-    onSubmit();
-  });
-  const [isValid, setIsValid] = useState(false);
   return (
     <div
       className={`modal ${isOpen && "modal__opened"}`}
@@ -43,17 +40,26 @@ function ModalWithForm({
 
         <FormProvider {...methods}>
           <form
-            onChange={(e) => setIsValid(e.currentTarget.checkValidity())}
-            onSubmit={(e) => e.preventDefault()}
+            // Let the parent handler run with the real event.
+            onSubmit={(e) => {
+              // block submit if RHF thinks the form is invalid
+              if (!methods.formState.isValid) {
+                e.preventDefault();
+                return;
+              }
+              onSubmit && onSubmit(e);
+              setSuccess(true);
+              methods.reset();
+            }}
             className={`modal__form ${classNames.form}`}
+            noValidate
           >
             {children}
             <div className="modal__button-container">
               <button
                 type="submit"
                 className="modal__submit"
-                disabled={!isValid}
-                onClick={onFormSubmit}
+                disabled={!methods.formState.isValid}
               >
                 {buttonText}
               </button>

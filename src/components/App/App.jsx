@@ -29,11 +29,12 @@ import {
   getTeams,
   getVillages,
 } from "../../utils/dattebayoApi";
+import Preloader from "../Preloader/Preloader";
 
 function App() {
   // State for cards content
   // const [characters, setCharacters] = useState([]);
-  const [akatsuki, setAkatsuki] = useState([]);
+  const [akatsuki, setAkatsuki] = useState(null);
   const [clans, setClans] = useState([]);
   const [kara, setKara] = useState([]);
   const [kekkeiGenkai, setKekkeiGenkai] = useState([]);
@@ -42,8 +43,8 @@ function App() {
   const [villages, setVillages] = useState([]);
 
   // State for stats
-  const [numOfCharacters, setNumOfCharacters] = useState(0);
   const [numOfAkatsuki, setNumOfAkatsuki] = useState(0);
+  const [numOfCharacters, setNumOfCharacters] = useState(0);
   const [numOfClans, setNumOfClans] = useState(0);
   const [numOfKara, setNumOfKara] = useState(0);
   const [numOfKekkeiGenkai, setNumOfKekkeiGenkai] = useState(0);
@@ -53,6 +54,15 @@ function App() {
 
   const [activeModal, setActiveModal] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const [akatsukiError, setAkatsukiError] = useState("");
+  const [charactersError, setCharactersError] = useState("");
+  const [clansError, setClansError] = useState("");
+  const [karaError, setKaraError] = useState("");
+  const [kekkeiGenkaiError, setKekkeiGenkaiError] = useState("");
+  const [tailedBeastsError, setTailedBeastsError] = useState("");
+  const [teamsError, setTeamsError] = useState("");
+  const [villagesError, setVillagesError] = useState("");
 
   const handleSignUpClick = () => {
     setActiveModal("sign-up");
@@ -75,7 +85,7 @@ function App() {
     e.preventDefault();
 
     const name = e.target.name.value;
-    const avatar = e.target.avatar.value;
+    const avatar = e.target.avatarUrl.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
 
@@ -120,14 +130,21 @@ function App() {
         // setCharacters(data.characters);
         setNumOfCharacters(data.total);
       })
-      .catch((err) => console.error("Failed to fetch characters:", err));
+      .catch((err) => {
+        console.error("Failed to fetch characters:", err);
+      });
 
     getAkatsuki()
       .then((data) => {
         setAkatsuki(data.akatsuki);
         setNumOfAkatsuki(data.total);
       })
-      .catch((err) => console.error("Failed to fetch akatsuki:", err));
+      .catch((err) => {
+        console.error("Failed to fetch akatsuki:", err);
+        setAkatsukiError(
+          "Could not load Akatsuki data. Please try again later."
+        );
+      });
 
     getClans()
       .then((data) => {
@@ -170,7 +187,16 @@ function App() {
         setNumOfVillages(data.total);
       })
       .catch((err) => console.error("Failed to fetch villages:", err));
-  }, []);
+  }, [
+    akatsukiError,
+    charactersError,
+    clansError,
+    karaError,
+    kekkeiGenkaiError,
+    tailedBeastsError,
+    teamsError,
+    villagesError,
+  ]);
 
   useEffect(() => {
     const token = localStorage.getItem("jwt");
@@ -222,7 +248,22 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route path="/akatsuki" element={<Akatsuki akatsuki={akatsuki} />} />
+          <Route
+            path="/akatsuki"
+            element={
+              akatsukiError ? (
+                <div className="fill-center">
+                  <p className="page__error">{akatsukiError}</p>
+                </div>
+              ) : akatsuki === null ? (
+                <div className="fill-center">
+                  <Preloader />
+                </div>
+              ) : (
+                <Akatsuki akatsuki={akatsuki} />
+              )
+            }
+          />
           <Route
             path="/characters"
             element={<Characters /* characters={characters} */ />}
