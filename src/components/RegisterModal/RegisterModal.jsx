@@ -1,5 +1,13 @@
 import "./RegisterModal.css";
+
+import Input from "../Input/Input";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import {
+  name_validation,
+  email_validation,
+  password_validation,
+  avatar_url_validation,
+} from "../../utils/inputValidations";
 
 function RegisterModal({ onClose, isOpen, handleLogInClick, onRegister }) {
   return (
@@ -22,27 +30,10 @@ function RegisterModal({ onClose, isOpen, handleLogInClick, onRegister }) {
         </button>
       }
     >
-      <label htmlFor="register-email">
-        Email*
-        <input type="email" required name="email" id="register-email" />
-      </label>
-      <label htmlFor="register-password">
-        Password*
-        <input
-          type="password"
-          required
-          name="password"
-          id="register-password"
-        />
-      </label>
-      <label htmlFor="register-name">
-        Name*
-        <input type="text" required name="name" id="register-name" />
-      </label>
-      <label htmlFor="register-avatar">
-        Avatar URL*
-        <input type="url" required name="avatar" id="register-avatar" />
-      </label>
+      <Input {...email_validation} />
+      <Input {...password_validation} />
+      <Input {...name_validation} />
+      <Input {...avatar_url_validation} />
     </ModalWithForm>
   );
 }

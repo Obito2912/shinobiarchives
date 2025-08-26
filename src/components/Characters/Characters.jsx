@@ -66,13 +66,6 @@ function Characters() {
         <h1 className="characters__title">Characters</h1>
 
         <div className="characters__content">
-          {/* Preloader until data has been received */}
-          {loading && (
-            <div aria-live="polite">
-              <Preloader />
-            </div>
-          )}
-
           {/* Error message */}
           {err && (
             <div role="alert" style={{ color: "#ffbb00" }}>
@@ -138,7 +131,7 @@ function Characters() {
                   onClick={() => setPage((p) => Math.max(1, p - 1))}
                   disabled={page <= 1}
                 >
-                  ← Prev
+                  Prev
                 </button>
                 <span>
                   Page <span className="pagination__page">{page}</span> of
@@ -150,7 +143,7 @@ function Characters() {
                   onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
                   disabled={page >= totalPages}
                 >
-                  Next →
+                  Next
                 </button>
               </div>
             </>
