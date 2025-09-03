@@ -15,7 +15,7 @@ function ModalWithForm({
   onSubmit = null,
 }) {
   const methods = useForm({
-    mode: "onChange", // 👈 live validity from RHF
+    mode: "onChange",
     criteriaMode: "all",
   });
 
@@ -40,9 +40,7 @@ function ModalWithForm({
 
         <FormProvider {...methods}>
           <form
-            // Let the parent handler run with the real event.
             onSubmit={(e) => {
-              // block submit if RHF thinks the form is invalid
               if (!methods.formState.isValid) {
                 e.preventDefault();
                 return;

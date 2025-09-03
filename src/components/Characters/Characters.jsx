@@ -6,7 +6,6 @@ import { getCharacters } from "../../utils/dattebayoApi";
 import Card from "../Card/Card";
 import CardDetailsModal from "../CardDetailsModal/CardDetailsModal";
 import CharacterModalContent from "../CharacterModalContent/CharacterModalContent";
-import Preloader from "../Preloader/Preloader";
 
 import "./Characters.css";
 
