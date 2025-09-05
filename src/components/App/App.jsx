@@ -299,7 +299,7 @@ function App() {
                   loading={clans === null}
                   label="Clans"
                 >
-                  <Clans />
+                  <Clans clans={clans} />
                 </RouteElement>
               }
             />
@@ -311,7 +311,7 @@ function App() {
                   loading={kara === null}
                   label="Kara"
                 >
-                  <Kara />
+                  <Kara kara={kara} />
                 </RouteElement>
               }
             />
@@ -323,7 +323,7 @@ function App() {
                   loading={kekkeiGenkai === null}
                   label="Kekkei-Genkai"
                 >
-                  <KekkeiGenkai />
+                  <KekkeiGenkai kekkeiGenkai={kekkeiGenkai} />
                 </RouteElement>
               }
             />
@@ -335,7 +335,7 @@ function App() {
                   loading={tailedBeasts === null}
                   label="Tailed-Beasts"
                 >
-                  <TailedBeasts />
+                  <TailedBeasts tailedBeasts={tailedBeasts} />
                 </RouteElement>
               }
             />
@@ -347,7 +347,7 @@ function App() {
                   loading={teams === null}
                   label="Teams"
                 >
-                  <Teams />
+                  <Teams teams={teams} />
                 </RouteElement>
               }
             />
@@ -359,7 +359,7 @@ function App() {
                   loading={villages === null}
                   label="Villages"
                 >
-                  <Villages />
+                  <Villages villages={villages} />
                 </RouteElement>
               }
             />
