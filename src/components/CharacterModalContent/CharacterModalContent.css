@@ -13,15 +13,22 @@
 
 .char-modal__title {
     margin: 10px 0;
-    color: #ddd;
+    color: var(--modal-primary-text-color);
 }
 
 .char-modal__key {
-    color: #fc973a;
+    color: var(--dialog-highlight);
     margin: 0;
 }
 
 .char-modal__value {
-    color: #ddd;
+    color: var(--modal-primary-text-color);
     font-weight: 200;
+}
+
+@media screen and (width < 600px) {
+    .char-modal__img {
+        width: 260px;
+        height: auto;
+    }
 }

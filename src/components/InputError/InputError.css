@@ -1,0 +1,11 @@
+.error {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-weight: normal;
+    color: #dc4e4e;
+    position: absolute;
+    top: 0;
+    right: 0;
+}

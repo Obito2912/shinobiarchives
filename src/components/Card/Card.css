@@ -1,10 +1,14 @@
 .card {
-  border: 1px solid #292929;
+  border: 1px solid var(--modal-inner-background);
   border-radius: 1rem;
   outline: none;
+  transition-property: border;
+  transition-duration: .5s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
 }
 
 .card:hover,
 .card:focus {
-  border: 1px solid silver;
+  border: 1px solid var(--modal-primary-text-color);
 }

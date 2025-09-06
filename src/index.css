@@ -1,11 +1,64 @@
 @import url(./vendor/normalize.css);
 
+@font-face {
+    font-family: 'Exo 2';
+    src: url(./vendor/fonts/Exo2-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Gluten';
+    src: url(./vendor/fonts/Gluten-VariableFont_slnt,wght.ttf);
+}
+
+@font-face {
+    font-family: 'Comic Relief';
+    src: url(./vendor/fonts/ComicRelief-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Comic Relief';
+    src: url(./vendor/fonts/ComicRelief-Bold.ttf);
+    font-weight: bold;
+}
+
+:root {
+    --transparent: transparent;
+    --black: #000;
+    --white: #fff;
+    --primary-color: #ffbb00;
+    --full-border: #22a1cb;
+    --modal-error-message: #f7b267;
+    --modal-outer-background: #0000004d;
+    --modal-inner-background: #292929;
+    --modal-primary-text-color: #ddd;
+    --modal-close-hover: #dddddd52;
+    --dialog-close-hover: #0a3d7781;
+    --modal-submit-background: #0000006e;
+    --main-text-color: #cecece;
+    --disabled-button: rgba(239, 239, 239, 0.3);
+    --character-content-background: rgba(0, 0, 0, .6);
+    --header-border-btn: #444;
+    --dropdown-menu-border: #2c2c2c;
+    --dropdown-box-shadow: rgba(0, 0, 0, .35);
+    --header-btn-hover: #dddddd17;
+    --footer-gradient: rgb(34, 161, 203);
+    --dialog-highlight: #fc973a;
+    --dialog-background: hsla(0, 0%, 0%, 0.6);
+    --dialog-black-gradient: #00000076;
+    --dialog-dark-blue-gradient: #0a3d7776;
+    --preloader-border-color: #888;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5 {
-    font-family: "Comic Relief", system-ui;
+    font-family: "Comic Relief", Cambria, Cochin system-ui;
 }
 
 h2 {
